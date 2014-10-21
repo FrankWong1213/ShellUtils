@@ -24,7 +24,9 @@ echo "============================== finish mvn compile ========================
 sudo $Tomcat_Home/bin/shutdown.sh
 sleep 5
 cd $Tomcat_Home/webapps
-rm -rf $Project_Name*  
+rm -rf $Project_Name*
+cd $Tomcat_Home/work
+rm -rf Catalina*
 cd $Deploy_Path/$Project_Name/$Deploy_Version
 mv -f  $Project_Name-$Deploy_Version.war $Project_Name.war
 cp $Project_Name.war $Tomcat_Home/webapps
