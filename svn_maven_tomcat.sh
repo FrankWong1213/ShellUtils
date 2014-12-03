@@ -7,6 +7,7 @@ echo "============================== clean local code ==========================
 rm -rf $Project_Name
 echo "============================== begin  checkout  code =============================="
 svn co https://github.com/FrankWong1213/dianshang/trunk  dianshang
+# git clone https://username:password@github.com/FrankWong1213/dianshang.git  $Project_Name
 echo "============================== finish  checkout source code =============================="
 Deploy_Version=$(awk '/<version>/,/<\/version>/ {print $0}'  $Project_Name/pom.xml | awk -v FS="<version>" -v OFS=" " '{print $2}' | awk -v FS="</version>" -v OFS=" " '{print $1;exit}')
 echo "==============================the deploy version is $Deploy_Version =============================="
