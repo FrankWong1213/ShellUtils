@@ -7,7 +7,10 @@ echo "============================== clean local code ==========================
 rm -rf $Project_Name
 echo "============================== begin  checkout  code =============================="
 svn co https://github.com/FrankWong1213/dianshang/trunk  dianshang
-
+# 删除行首空格
+find ./dianshang -name '*.jsp' | xargs sed -i 's/^[[:space:]]*//'
+# 删除空行
+find ./dianshang -name '*.jsp' | xargs sed -i '/^\s*$/d'
 # svn co https://github.com/FrankWong1213/dianshang/trunk -r  20  dianshang
 
 # git clone https://username:password@github.com/FrankWong1213/dianshang.git  $Project_Name
