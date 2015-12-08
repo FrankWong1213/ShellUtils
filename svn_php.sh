@@ -1,5 +1,5 @@
 #!/bin/sh
-#php自动下载部署
+#php自动下载部署 
 Project_Name=sht-website
 rm -rf $Project_Name
 echo "============================== clean local code =============================="
